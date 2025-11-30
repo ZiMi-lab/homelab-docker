@@ -1,8 +1,8 @@
-## Cloudflare Tunnel (cloudflared)
+# Cloudflare Tunnel (cloudflared)
 
 Stack obsahuje konfiguraci pro nasazení **Cloudflare Tunnel (cloudflared)** konektoru. Ten umožňuje bezpečný a šifrovaný přístup k lokálním službám v homelabu bez nutnosti otevírat porty na routeru.
 
-### 1\. Proč Cloudflare Tunnel? (Zero Trust Access)
+## 1\. Proč Cloudflare Tunnel? (Zero Trust Access)
 
 Cloudflare Tunnel je **Zero Trust** řešení pro vystavení služeb:
 
@@ -10,17 +10,17 @@ Cloudflare Tunnel je **Zero Trust** řešení pro vystavení služeb:
   * **Bezpečnost:** Veřejná IP adresa zůstává skrytá. Na routeru **není potřeba otevírat porty** (žádné NAT/Port Forwarding).
   * **HTTPS Zabezpečení:** Cloudflare automaticky zajišťuje HTTPS zabezpečení pro vystavené služby.
 
-### 2\. Konfigurace Cloudflare Zero Trust
+## 2\. Konfigurace Cloudflare Zero Trust
 
 Před spuštěním kontejneru je nutné získat **Tunnel Token** a definovat cílové služby (Public Hostnames) v Cloudflare konzoli.
 
-#### 2.1. Získání Tunnel Tokenu
+### 2.1. Získání Tunnel Tokenu
 
 1.  Přihlas se do Cloudflare a přejdi do **Zero Trust** $\rightarrow$ **Networks** $\rightarrow$ **Tunnels**.
 2.  Klikni na **Create a tunnel**, zvol typ **Cloudflared** a pojmenuj jej (např. `homelab-gateway`).
 3.  Cloudflare ti vygeneruje příkaz pro spuštění. Zvol možnost **Docker** a **zkopíruj unikátní hodnotu tokenu** (hodnota proměnné `TUNNEL_TOKEN`).
 
-#### 2.2. Definice Public Hostnames
+### 2.2. Definice Public Hostnames
 
 Jakmile je kontejner spuštěn, tunel potřebuje vědět, kam má provoz směrovat.
 
@@ -36,11 +36,11 @@ Jakmile je kontejner spuštěn, tunel potřebuje vědět, kam má provoz směrov
 
 > **Doporučení:** Pro přístup ke službám běžícím přímo na Docker hostiteli (např. Proxmox WebUI, pokud **cloudflared** běží na LXC/VM) použij v URL `host.docker.internal:<port>`.
 
-### 3\. 📄 Docker Compose
+## 3\. 📄 Docker Compose
 
 Tato konfigurace používá `.env` soubor pro bezpečné uložení citlivého tokenu.
 
-#### 3.1. Soubor `.env`
+### 3.1. Soubor `.env`
 
 Vytvoř soubor `.env` a nahraď zástupné hodnoty tvými daty:
 
@@ -53,7 +53,7 @@ TZ=Europe/Prague
 TOKEN="UNIKATNI_CLOUDPLARE_TOKEN_ZDE"
 ```
 
-#### 3.2. Soubor `docker-compose.yml`
+### 3.2. Soubor `docker-compose.yml`
 
 ```yaml
 # docker-compose.yml

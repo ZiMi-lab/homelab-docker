@@ -1,8 +1,8 @@
-## Cloudflare Tunnel (cloudflared)
+# Cloudflare Tunnel (cloudflared)
 
 The stack includes configuration for deploying the **Cloudflare Tunnel (cloudflared)** connector. This allows for secure and encrypted access to local services in your homelab without needing to open ports on your router.
 
-### 1\. Why Cloudflare Tunnel? (Zero Trust Access)
+## 1\. Why Cloudflare Tunnel? (Zero Trust Access)
 
 Cloudflare Tunnel is a **Zero Trust** solution for exposing services:
 
@@ -12,17 +12,17 @@ Cloudflare Tunnel is a **Zero Trust** solution for exposing services:
 
 -----
 
-### 2\. Cloudflare Zero Trust Configuration
+## 2\. Cloudflare Zero Trust Configuration
 
 Before starting the container, you must obtain a **Tunnel Token** and define the target services (Public Hostnames) in the Cloudflare console.
 
-#### 2.1. Obtaining the Tunnel Token
+### 2.1. Obtaining the Tunnel Token
 
 1.  Log in to Cloudflare and navigate to **Zero Trust** $\rightarrow$ **Networks** $\rightarrow$ **Tunnels**.
 2.  Click on **Create a tunnel**, select the type **Cloudflared**, and name it (e.g., `homelab-gateway`).
 3.  Cloudflare will generate a startup command for you. Select the **Docker** option and **copy the unique token value** (the value of the `TUNNEL_TOKEN` variable).
 
-#### 2.2. Defining Public Hostnames
+### 2.2. Defining Public Hostnames
 
 Once the container is running, the tunnel needs to know where to route traffic.
 
@@ -40,11 +40,11 @@ Once the container is running, the tunnel needs to know where to route traffic.
 
 -----
 
-### 3\. 📄 Docker Compose
+## 3\. 📄 Docker Compose
 
 This configuration uses an `.env` file to securely store the sensitive token.
 
-#### 3.1. The `.env` File
+### 3.1. The `.env` File
 
 Create an `.env` file and replace the placeholder values with your data:
 
@@ -57,7 +57,7 @@ TZ=Europe/Prague
 TOKEN="UNIQUE_CLOUDPLARE_TOKEN_HERE"
 ```
 
-#### 3.2. The `docker-compose.yml` File
+### 3.2. The `docker-compose.yml` File
 
 ```yaml
 # docker-compose.yml
@@ -84,7 +84,7 @@ services:
       - "host.docker.internal:host-gateway"
 ```
 
-#### 3.3. Starting the Service
+### 3.3. Starting the Service
 
 Start the container using Docker Compose:
 

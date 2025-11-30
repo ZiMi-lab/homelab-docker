@@ -1,4 +1,4 @@
-# ⚡ Homelab Cloudflare Tunnel
+# ⚡ Cloudflare Tunnel
 
 [![Cloudflare Tunnel Logo](https://img.shields.io/badge/Cloudflare-Tunnel-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.cloudflare.com/products/tunnel/)
 [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-v3.8-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)

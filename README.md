@@ -1,4 +1,4 @@
-## Přehled projektu
+# Přehled projektu
 
 Repozitář slouží jako centrální úložiště pro správu služeb běžících v mém **Homelabu**. Cílem je implementace principů **Infrastructure as Code (IaC)** pro snadnou replikaci, správu a verzování služeb.
 
