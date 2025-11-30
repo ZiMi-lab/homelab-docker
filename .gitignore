@@ -1,0 +1,11 @@
+# Ignorovat env soubory
+.env
+**/.env
+
+# Ignorovat systémové soubory
+.DS_Store
+Thumbs.db
+
+# Ignorovat data adresáře
+**/data/
+**/mysql/
