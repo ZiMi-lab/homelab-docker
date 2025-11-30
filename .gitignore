@@ -1,11 +1,40 @@
-# Ignorovat env soubory
-.env
-**/.env
+# ----------------------------------------
+# 🔒 SECRETS & ENVIRONMENT VARIABLES
+# ----------------------------------------
+# Ignorovat VSECHNY .env soubory (v koreni a podadresari)
+**/.env*
 
-# Ignorovat systémové soubory
+# VYJÍMKA: Povolit soubory .env.example
+!.env.example
+
+# ----------------------------------------
+# ⚙️ SYSTEM & TEMPORARY FILES
+# ----------------------------------------
 .DS_Store
 Thumbs.db
 
-# Ignorovat data adresáře
+# ----------------------------------------
+# 📦 DATA VOLUMES
+# ----------------------------------------
+# Ignoruje adresare 'data' a 'mysql' kdekoliv v projektu
 **/data/
 **/mysql/
+**/db_data/
+**/config/
+
+# ----------------------------------------
+# 🐳 DOCKER OVERRIDES & TEMPORARY
+# ----------------------------------------
+# Standardne generovane nebo lokalne modifikovane soubory
+docker-compose.override.yml
+**/docker-compose.override.yml
+
+# ----------------------------------------
+# ⛔ VÝVOJOVÉ A TESTOVACÍ ADRESÁŘE
+# ----------------------------------------
+# Ignoruje adresář /dev/ v kořeni projektu
+/dev/
+
+# Ignoruje adresáře, které mají v nazvu "tmp" nebo "temp"
+**/tmp/
+**/temp/
