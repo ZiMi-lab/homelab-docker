@@ -67,5 +67,3 @@ docker compose up -d
 ## 📝 Licence
 
 Tento projekt je zveřejněn pod licencí **MIT** (TBD) pro volné použití, modifikace a sdílení v rámci komunity.
-
-```
