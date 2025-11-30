@@ -2,7 +2,7 @@
 
 Repozitář slouží jako centrální úložiště pro správu služeb běžících v mém **Homelabu**. Cílem je implementace principů **Infrastructure as Code (IaC)** pro snadnou replikaci, správu a verzování služeb.
 
-## 🔒 Správa tajných dat (Secrets)
+## 🔒 Tajemství (Secrets)
 
 **Repozitář je veřejný a neobsahuje skutečné přihlašovací údaje, API klíče ani hesla.**
 
@@ -39,7 +39,7 @@ Pro nasazení nového Docker stacku na cílovém serveru (typicky Proxmox LXC ne
 
 ```bash
 # Na cílovém serveru (VM/LXC s Dockerem)
-git clone [https://github.com/ZiMi-lab/homelab-docker.git](https://github.com/ZiMi-lab/homelab-docker.git)
+git clone https://github.com/ZiMi-lab/homelab-docker.git
 cd homelab-docker
 ```
 
@@ -52,7 +52,7 @@ cd immich
 # Zkopírování šablony
 cp .env.example .env
 
-# Úprava a vložení skutečných hesel a domén
+# Úprava a vložení správných údajů
 nano .env 
 ```
 
