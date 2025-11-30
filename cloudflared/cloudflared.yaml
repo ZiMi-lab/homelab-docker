@@ -1,0 +1,13 @@
+# https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/get-started/
+services:
+  cloudflared:
+    image: cloudflare/cloudflared
+    container_name: cloudflared
+    environment:
+      - TZ=${TZ}
+      - TUNNEL_TOKEN=${TOKEN}
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      
